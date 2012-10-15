@@ -1337,3 +1337,41 @@
 2012-10-15 13:06:49 [com.wakanda-software.TIVO.ServerAdmin] INFO - Closing the project
 2012-10-15 13:06:49 [com.wakanda-software.TIVO.ServerAdmin] INFO - Project closed (duration: 4 ms)
 2012-10-15 13:06:49 [com.wakanda-software.TIVO] INFO - Solution closed (duration: 821 ms)
+2012-10-15 14:37:47 [com.wakanda-software.TIVO] INFO - Opening the solution
+2012-10-15 14:37:47 [com.wakanda-software.TIVO] INFO - Opening the users and groups directory
+2012-10-15 14:37:47 [com.wakanda-software.TIVO] INFO - Users and groups directory opened (duration: 187 ms)
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.TIVO] INFO - Opening the project
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.TIVO] INFO - Opening the database
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.TIVO] INFO - Database opened (duration: 41 ms)
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.TIVO] INFO - Project opened (duration: 119 ms)
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.ServerAdmin] INFO - Opening the project
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.ServerAdmin] INFO - Project opened (duration: 6 ms)
+2012-10-15 14:37:47 [com.wakanda-software.TIVO] INFO - Solution opened (duration: 365 ms)
+2012-10-15 14:37:47 [com.wakanda-software.TIVO] INFO - Starting the solution
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.TIVO] INFO - Starting the project
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.TIVO] INFO - Starting the HTTP server
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.TIVO] INFO - HTTP server started (duration: 28 ms)
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.TIVO] INFO - Project started (duration: 151 ms)
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.ServerAdmin] INFO - Starting the project
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.ServerAdmin] INFO - Starting the HTTP server
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.ServerAdmin] INFO - HTTP server started (duration: 28 ms)
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.ServerAdmin] INFO - Project started (duration: 68 ms)
+2012-10-15 14:37:47 [com.wakanda-software.TIVO.TIVO] INFO - Executing the bootstrap(s)
+2012-10-15 14:37:48 [com.wakanda-software.TIVO.TIVO] INFO - Bootstrap(s) executed (duration: 130 ms)
+2012-10-15 14:37:48 [com.wakanda-software.TIVO.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-10-15 14:37:48 [com.wakanda-software.TIVO.ServerAdmin] INFO - Bootstrap(s) executed (duration: 10 ms)
+2012-10-15 14:37:48 [com.wakanda-software.TIVO] INFO - Solution started (duration: 361 ms)
+2012-10-15 15:09:43 [com.wakanda-software.TIVO] INFO - Stopping the solution
+2012-10-15 15:09:43 [com.wakanda-software.TIVO.TIVO] INFO - Stopping the project
+2012-10-15 15:09:44 [com.wakanda-software.TIVO.TIVO] INFO - Project stopped (duration: 1091 ms)
+2012-10-15 15:09:44 [com.wakanda-software.TIVO.ServerAdmin] INFO - Stopping the project
+2012-10-15 15:09:46 [com.wakanda-software.TIVO.ServerAdmin] INFO - Project stopped (duration: 2059 ms)
+2012-10-15 15:09:46 [com.wakanda-software.TIVO] INFO - Solution stopped (duration: 3151 ms)
+2012-10-15 15:09:46 [com.wakanda-software.TIVO] INFO - Closing the solution
+2012-10-15 15:09:46 [com.wakanda-software.TIVO.TIVO] INFO - Closing the project
+2012-10-15 15:09:46 [com.wakanda-software.TIVO.TIVO] INFO - Closing the database
+2012-10-15 15:09:46 [com.wakanda-software.TIVO.TIVO] INFO - Database closed (duration: 404 ms)
+2012-10-15 15:09:46 [com.wakanda-software.TIVO.TIVO] INFO - Project closed (duration: 406 ms)
+2012-10-15 15:09:46 [com.wakanda-software.TIVO.ServerAdmin] INFO - Closing the project
+2012-10-15 15:09:46 [com.wakanda-software.TIVO.ServerAdmin] INFO - Project closed (duration: 3 ms)
+2012-10-15 15:09:47 [com.wakanda-software.TIVO] INFO - Solution closed (duration: 816 ms)
