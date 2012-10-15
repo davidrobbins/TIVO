@@ -4,7 +4,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @region namespaceDeclaration// @startlock
 	var saveTeamButton = {};	// @button
 	var cancelTeamButton = {};	// @button
-	var button3 = {};	// @button
+	var newTeamButton = {};	// @button
 	var cancelButton = {};	// @button
 	var newUser = {};	// @button
 	var saveButton = {};	// @button
@@ -20,6 +20,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//Save Team
 		WAF.sources.team.save({
 			onSuccess: function(event) {
+				if (waf.sources.team.getPosition() === -1) {
+					WAF.sources.team.addEntity(event.dataSource.getCurrentElement());
+				}
 				tivoAdminUtil.setMessageValue("messageRichText", "Team entity saved successfully.", false);
 			},
 			onError: function(error) {
@@ -45,7 +48,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		});
 	};// @lock
 
-	button3.click = function button3_click (event)// @startlock
+	newTeamButton.click = function newTeamButton_click (event)// @startlock
 	{// @endlock
 		//New Team Button
 		ds.Team.newTeam({
@@ -89,6 +92,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//Save User
 		WAF.sources.user.save({
 			onSuccess: function(event) {
+				if (waf.sources.user.getPosition() === -1) {
+					WAF.sources.user.addEntity(event.dataSource.getCurrentElement());
+				}
 				tivoAdminUtil.setMessageValue("messageRichText", "User entity saved successfully.", false);
 			},
 			onError: function(error) {
@@ -165,7 +171,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @region eventManager// @startlock
 	WAF.addListener("saveTeamButton", "click", saveTeamButton.click, "WAF");
 	WAF.addListener("cancelTeamButton", "click", cancelTeamButton.click, "WAF");
-	WAF.addListener("button3", "click", button3.click, "WAF");
+	WAF.addListener("newTeamButton", "click", newTeamButton.click, "WAF");
 	WAF.addListener("cancelButton", "click", cancelButton.click, "WAF");
 	WAF.addListener("newUser", "click", newUser.click, "WAF");
 	WAF.addListener("saveButton", "click", saveButton.click, "WAF");
