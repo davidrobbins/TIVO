@@ -1,8 +1,35 @@
 ﻿
 guidedModel =// @startlock
 {
+	Team :
+	{
+		events :
+		{
+			onInit:function()
+			{// @endlock
+				//Team Init
+				this.Dept = "Hardware";
+			}// @startlock
+		},
+		methods :
+		{// @endlock
+			newTeam:function()
+			{// @lock
+				// Create New Team
+				return new ds.Team();
+			}// @startlock
+		}
+	},
 	User :
 	{
+		methods :
+		{// @endlock
+			newUser:function()
+			{// @lock
+				// Create New User
+				return new ds.User();
+			}// @startlock
+		},
 		entityMethods :
 		{// @endlock
 			validatePassword:function(password)
@@ -29,9 +56,15 @@ guidedModel =// @startlock
 		},
 		events :
 		{
+			onInit:function()
+			{// @endlock
+				this.role = "Manager";
+			},// @startlock
 			onValidate:function()
 			{// @endlock
-				
+				if (this.login === "admin") {
+					return {error: 910, errorMessage: "You cannot create a user with a login name of 'admin'."};
+				}
 			}// @startlock
 		}
 	}
