@@ -1,6 +1,17 @@
 ﻿
 guidedModel =// @startlock
 {
+	Project :
+	{
+		methods :
+		{// @endlock
+			newProject:function()
+			{// @lock
+				// Create New Project
+				return new ds.Project();
+			}// @startlock
+		}
+	},
 	Team :
 	{
 		events :

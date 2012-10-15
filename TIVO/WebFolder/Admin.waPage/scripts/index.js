@@ -2,6 +2,9 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var cancelProjectButton = {};	// @button
+	var saveProjectButton = {};	// @button
+	var newProjectButton = {};	// @button
 	var saveTeamButton = {};	// @button
 	var cancelTeamButton = {};	// @button
 	var newTeamButton = {};	// @button
@@ -15,6 +18,53 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // eventHandlers// @lock
 
+	cancelProjectButton.click = function cancelProjectButton_click (event)// @startlock
+	{// @endlock
+		//Cancel Project Button
+		tivoAdminUtil.setMessageValue("messageRichText", "", false);
+		var primKey = WAF.sources.project.ID;
+		WAF.sources.project.selectByKey(primKey, {
+			onSuccess: function(event) {
+				
+			},
+			onError: function(error) {
+				
+			}
+		});
+		
+	};// @lock
+
+	saveProjectButton.click = function saveProjectButton_click (event)// @startlock
+	{// @endlock
+		//Save Project Buton
+		WAF.sources.project.save({
+			onSuccess: function(event) {
+				if (waf.sources.project.getPosition() === -1) {
+					WAF.sources.project.addEntity(event.dataSource.getCurrentElement());
+				}
+				tivoAdminUtil.setMessageValue("messageRichText", "Project saved successfully.", false);
+			},
+			onError: function(error) {
+				var myError = error['error'][0];
+				tivoAdminUtil.setMessageValue("messageRichText", myError, false);
+			}	
+		});
+		
+	};// @lock
+
+	newProjectButton.click = function newProjectButton_click (event)// @startlock
+	{// @endlock
+		//New Project Button
+		ds.Project.newProject({
+			onSuccess: function(event) {
+				WAF.sources.project.setCurrentEntity(event.result);
+				$$('projectNameTextField').focus();
+				tivoAdminUtil.setMessageValue("messageRichText", "Enter the Project Name and Customer and click 'Save'.", false);
+			}
+		});
+		
+	};// @lock
+
 	saveTeamButton.click = function saveTeamButton_click (event)// @startlock
 	{// @endlock
 		//Save Team
@@ -23,7 +73,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				if (waf.sources.team.getPosition() === -1) {
 					WAF.sources.team.addEntity(event.dataSource.getCurrentElement());
 				}
-				tivoAdminUtil.setMessageValue("messageRichText", "Team entity saved successfully.", false);
+				tivoAdminUtil.setMessageValue("messageRichText", "Team saved successfully.", false);
 			},
 			onError: function(error) {
 				var myError = error['error'][0];
@@ -35,7 +85,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	cancelTeamButton.click = function cancelTeamButton_click (event)// @startlock
 	{// @endlock
 		//Cancel Team Button
-		//Cancel button
 		tivoAdminUtil.setMessageValue("messageRichText", "", false);
 		var primKey = WAF.sources.team.ID;
 		WAF.sources.team.selectByKey(primKey, {
@@ -95,7 +144,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				if (waf.sources.user.getPosition() === -1) {
 					WAF.sources.user.addEntity(event.dataSource.getCurrentElement());
 				}
-				tivoAdminUtil.setMessageValue("messageRichText", "User entity saved successfully.", false);
+				tivoAdminUtil.setMessageValue("messageRichText", "User saved successfully.", false);
 			},
 			onError: function(error) {
 				var myError = error['error'][0];
@@ -169,6 +218,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("cancelProjectButton", "click", cancelProjectButton.click, "WAF");
+	WAF.addListener("saveProjectButton", "click", saveProjectButton.click, "WAF");
+	WAF.addListener("newProjectButton", "click", newProjectButton.click, "WAF");
 	WAF.addListener("saveTeamButton", "click", saveTeamButton.click, "WAF");
 	WAF.addListener("cancelTeamButton", "click", cancelTeamButton.click, "WAF");
 	WAF.addListener("newTeamButton", "click", newTeamButton.click, "WAF");
