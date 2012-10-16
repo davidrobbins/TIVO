@@ -7,7 +7,15 @@ guidedModel =// @startlock
 		{
 			onInit:function()
 			{// @endlock
+				var sessionRef = currentSession(); // Get session.
+				var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.
+				
+				var myCurrentUser = currentUser(); // we get the user of the current session.
+				var myUser = ds.User.find("ID = :1", myCurrentUser.ID);
+				this.reviewer = myUser;
 				this.review_date = new Date();
+				
+				sessionRef.unPromote(promoteToken); //put the session back to normal.
 			}// @startlock
 		},
 		methods :
@@ -37,7 +45,7 @@ guidedModel =// @startlock
 			onInit:function()
 			{// @endlock
 				//Team Init
-				this.Dept = "Hardware";
+				//this.Dept = "Hardware";
 			}// @startlock
 		},
 		methods :
@@ -85,6 +93,10 @@ guidedModel =// @startlock
 		},
 		events :
 		{
+			onRestrictingQuery:function()
+			{// @endlock
+				//User
+			},// @startlock
 			onInit:function()
 			{// @endlock
 				this.role = "Manager";

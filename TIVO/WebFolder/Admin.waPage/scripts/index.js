@@ -212,6 +212,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		roleArray = [];
 		roleArray.push({title: 'Manager'});
 		roleArray.push({title: 'Director'});
+		roleArray.push({title: 'Administrator'});
 		WAF.sources.roleArray.sync();
 		
 		deptArray = [];

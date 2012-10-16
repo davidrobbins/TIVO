@@ -1,1 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><permissions/>
+﻿<?xml version="1.0" encoding="UTF-8"?><permissions>
+<allow action="read" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Team_Project" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="create" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Team_Project" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="update" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Team_Project" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="remove" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Team_Project" temporaryForcePermissions="false" type="dataClass"/>
+</permissions>

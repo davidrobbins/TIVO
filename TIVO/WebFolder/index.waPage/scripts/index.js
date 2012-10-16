@@ -7,7 +7,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	var newPRTButton = {};	// @button
 	var openChooseProjectDialogButton = {};	// @button
 	var openChooseTeamDialogButton = {};	// @button
-	var button10 = {};	// @button
+	var chooseProjectOkButton = {};	// @button
 	var button9 = {};	// @button
 	var chooseTeamOKButton = {};	// @button
 	var chooseTeamCancelButton = {};	// @button
@@ -53,7 +53,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	newPRTButton.click = function newPRTButton_click (event)// @startlock
 	{// @endlock
 		//New Project Team Review
-		//New Team Button
 		ds.Team_Project.newReview({
 			onSuccess: function(event) {
 				WAF.sources.team_Project.setCurrentEntity(event.result);
@@ -79,13 +78,19 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		WAF.widgets['chooseTeamDialog'].displayDialog();
 	};// @lock
 
-	button10.click = function button10_click (event)// @startlock
+	chooseProjectOkButton.click = function chooseProjectOkButton_click (event)// @startlock
 	{// @endlock
+		waf.sources.team_Project.project.set(waf.sources.project);
+		waf.sources.team_Project.serverRefresh();
+		$('#chooseProjectDialog').css("top", -400);
+		$('#chooseProjectDialog').css("left", -400);
 		$$('chooseProjectDialog').closeDialog(); //ok button
 	};// @lock
 
 	button9.click = function button9_click (event)// @startlock
 	{// @endlock
+		$('#chooseProjectDialog').css("top", -400);
+		$('#chooseProjectDialog').css("left", -400);
 		$$('chooseProjectDialog').closeDialog(); //cancel button
 	};// @lock
 
@@ -128,6 +133,54 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
+		//Quality Array Datasource.
+		qualityArray = [];
+		qualityArray.push({title: ''});
+		qualityArray.push({title: '1'});
+		qualityArray.push({title: '2'});
+		qualityArray.push({title: '3'});
+		qualityArray.push({title: '4'});
+		qualityArray.push({title: '5'});
+		WAF.sources.qualityArray.sync();
+		
+		//Delivery Array Datasource.
+		deliveryArray = [];
+		deliveryArray.push({title: ''});
+		deliveryArray.push({title: '1'});
+		deliveryArray.push({title: '2'});
+		deliveryArray.push({title: '3'});
+		deliveryArray.push({title: '4'});
+		deliveryArray.push({title: '5'});
+		WAF.sources.deliveryArray.sync();
+		
+		//Productivity Array Datasource.
+		productivityArray = [];
+		productivityArray.push({title: ''});
+		productivityArray.push({title: '1'});
+		productivityArray.push({title: '2'});
+		productivityArray.push({title: '3'});
+		productivityArray.push({title: '4'});
+		productivityArray.push({title: '5'});
+		WAF.sources.productivityArray.sync();
+		
+		//Staffing Array Datasource.
+		staffingArray = [];
+		staffingArray.push({title: ''});
+		staffingArray.push({title: '1'});
+		staffingArray.push({title: '2'});
+		staffingArray.push({title: '3'});
+		staffingArray.push({title: '4'});
+		staffingArray.push({title: '5'});
+		WAF.sources.staffingArray.sync();
+		
+		//fix for combobox render bug where button get shoved
+		// to the next line because input element grows by 2 px.
+		var inputWidth = $('#teamCombobox input').css('width');
+		$('#teamCombobox input').css('width', "-=2");	
+		
+		var inputWidth = $('#projectCombobox input').css('width');
+		$('#projectCombobox input').css('width', "-=2");	
+		
 		$('#loginTextField, #passwordTextField').live('keyup', function (e) {
 	   		if ( e.keyCode == 13 ){
 	   			tivoUtil.signIn();
@@ -160,7 +213,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	WAF.addListener("newPRTButton", "click", newPRTButton.click, "WAF");
 	WAF.addListener("openChooseProjectDialogButton", "click", openChooseProjectDialogButton.click, "WAF");
 	WAF.addListener("openChooseTeamDialogButton", "click", openChooseTeamDialogButton.click, "WAF");
-	WAF.addListener("button10", "click", button10.click, "WAF");
+	WAF.addListener("chooseProjectOkButton", "click", chooseProjectOkButton.click, "WAF");
 	WAF.addListener("button9", "click", button9.click, "WAF");
 	WAF.addListener("chooseTeamOKButton", "click", chooseTeamOKButton.click, "WAF");
 	WAF.addListener("chooseTeamCancelButton", "click", chooseTeamCancelButton.click, "WAF");
