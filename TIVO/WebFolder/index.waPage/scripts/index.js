@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var menuItem5 = {};	// @menuItem
 	var cancelPRTButton = {};	// @button
 	var savePRTButton = {};	// @button
 	var newPRTButton = {};	// @button
@@ -17,6 +18,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	menuItem5.click = function menuItem5_click (event)// @startlock
+	{// @endlock
+		// Chart Tab
+		$.jqplot('chartContainer',  [[[1, 2],[3,5.12],[5,13.1],[7,33.6],[9,85.9],[11,219.9]]]);
+	};// @lock
 
 	cancelPRTButton.click = function cancelPRTButton_click (event)// @startlock
 	{// @endlock
@@ -208,6 +215,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("menuItem5", "click", menuItem5.click, "WAF");
 	WAF.addListener("cancelPRTButton", "click", cancelPRTButton.click, "WAF");
 	WAF.addListener("savePRTButton", "click", savePRTButton.click, "WAF");
 	WAF.addListener("newPRTButton", "click", newPRTButton.click, "WAF");

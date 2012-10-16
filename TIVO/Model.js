@@ -3,6 +3,14 @@ guidedModel =// @startlock
 {
 	Team_Project :
 	{
+		total_score :
+		{
+			onGet:function()
+			{// @endlock
+				total = this.quality + this.delivery + this.productivity + this.staffing;
+				return total;
+			}// @startlock
+		},
 		events :
 		{
 			onRestrictingQuery:function()
