@@ -3,6 +3,15 @@ guidedModel =// @startlock
 {
 	Team_Project :
 	{
+		collectionMethods :
+		{// @endlock
+			jqPlotTest:function()
+			{// @lock
+				// Add your code here
+				
+				return [[[1, 2],[3,5],[5,10],[7,25],[9,33],[11,24]]];
+			}// @startlock
+		},
 		total_score :
 		{
 			onGet:function()

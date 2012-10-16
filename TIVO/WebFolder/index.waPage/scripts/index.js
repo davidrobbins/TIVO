@@ -22,7 +22,17 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	menuItem5.click = function menuItem5_click (event)// @startlock
 	{// @endlock
 		// Chart Tab
-		$.jqplot('chartContainer',  [[[1, 2],[3,5.12],[5,13.1],[7,33.6],[9,85.9],[11,219.9]]]);
+		//jqPlotTest
+		//$.jqplot('chartContainer',  [[[1, 2],[3,5.12],[5,13.1],[7,33.6],[9,85.9],[11,219.9]]]);
+		//$.jqplot('chartContainer',  waf.sources.team_Project.jqPlotTest());
+		
+		waf.sources.team_Project.jqPlotTest({
+			onSuccess: function(event) {
+				//event.result
+				$.jqplot('chartContainer',  event.result);
+			}
+		});
+			
 	};// @lock
 
 	cancelPRTButton.click = function cancelPRTButton_click (event)// @startlock
