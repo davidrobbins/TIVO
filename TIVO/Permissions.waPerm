@@ -3,4 +3,16 @@
 <allow action="create" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Team_Project" temporaryForcePermissions="false" type="dataClass"/>
 <allow action="update" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Team_Project" temporaryForcePermissions="false" type="dataClass"/>
 <allow action="remove" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Team_Project" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="read" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.User" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="create" groupName="Administrator" groupID="5E8E6741B9BF48739F99E1CDEFB7181A" resource="Model.User" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="update" groupName="Administrator" groupID="5E8E6741B9BF48739F99E1CDEFB7181A" resource="Model.User" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="remove" groupName="Administrator" groupID="5E8E6741B9BF48739F99E1CDEFB7181A" resource="Model.User" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="read" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Project" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="create" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Project" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="update" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Project" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="remove" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Project" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="read" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Team" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="create" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Team" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="update" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Team" temporaryForcePermissions="false" type="dataClass"/>
+<allow action="remove" groupName="Manager" groupID="325DB3151F3A442F80F2060C1609B4C1" resource="Model.Team" temporaryForcePermissions="false" type="dataClass"/>
 </permissions>

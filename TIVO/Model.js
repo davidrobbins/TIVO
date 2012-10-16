@@ -5,6 +5,25 @@ guidedModel =// @startlock
 	{
 		events :
 		{
+			onRestrictingQuery:function()
+			{// @endlock
+				//Team_Project
+				//return ds.Team_Project.all();
+				var myCurrentUser = currentUser(); // Get the current user
+				var sessionRef = currentSession(); // Get session.
+				var result = ds.Team_Project.createEntityCollection();
+				
+				if ((sessionRef.belongsTo("Administrator")) || (sessionRef.belongsTo("Director"))) {
+					result = ds.Team_Project.all();
+				} else  if (sessionRef.belongsTo("Manager")) {
+					var myUser = ds.User.find("ID = :1", myCurrentUser.ID); // Load their user entity.
+					if (myUser !== null) {
+						result = ds.Team_Project.query("reviewer.login = :1", myCurrentUser.name);
+					}
+				}
+				
+				return result;
+			},// @startlock
 			onInit:function()
 			{// @endlock
 				var sessionRef = currentSession(); // Get session.
@@ -95,7 +114,16 @@ guidedModel =// @startlock
 		{
 			onRestrictingQuery:function()
 			{// @endlock
-				return ds.User.all();
+				var result = ds.User.createEntityCollection();
+				
+				if (currentSession().belongsTo("Administrator") || currentSession().belongsTo("Director")) {
+					result = ds.User.all();
+				
+				} else if (currentSession().belongsTo("Manager")) {
+					result = ds.User.query("login = :1", currentUser().name);
+				}
+				
+				return result;
 			},// @startlock
 			onInit:function()
 			{// @endlock

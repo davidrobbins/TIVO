@@ -1,1 +1,1 @@
-﻿﻿/* This is a regular JS file */if (loginByPassword("admin", "a")) {//	theUsers = ds.User.all();//	theUsers	projectReviews = ds.Team_Project.all();	projectReviews}
+﻿﻿/* This is a regular JS file */if (loginByPassword("admin", "a")) { //"mgerin", "gerin"	theUsers = ds.User.all();	theUsers//	projectReviews = ds.Team_Project.all();//	projectReviews}
