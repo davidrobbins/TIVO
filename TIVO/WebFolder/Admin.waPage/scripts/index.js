@@ -2,6 +2,9 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var chooseManagerButton = {};	// @button
+	var chooseManagerOkButton = {};	// @button
+	var chooseManagerCancelButton = {};	// @button
 	var cancelProjectButton = {};	// @button
 	var saveProjectButton = {};	// @button
 	var newProjectButton = {};	// @button
@@ -17,6 +20,26 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	chooseManagerButton.click = function chooseManagerButton_click (event)// @startlock
+	{// @endlock
+		//Choose Manager Open Dialog Button
+		$('#chooseManagerDialog').css("top", 200);
+		$('#chooseManagerDialog').css("left", 350);
+		WAF.widgets['chooseManagerDialog'].displayDialog();
+	};// @lock
+
+	chooseManagerOkButton.click = function chooseManagerOkButton_click (event)// @startlock
+	{// @endlock
+		waf.sources.team.manager.set(waf.sources.user1);
+		waf.sources.team.serverRefresh();
+		$$('chooseManagerDialog').closeDialog(); //ok button
+	};// @lock
+
+	chooseManagerCancelButton.click = function chooseManagerCancelButton_click (event)// @startlock
+	{// @endlock
+		$$('chooseManagerDialog').closeDialog(); //cancel button
+	};// @lock
 
 	cancelProjectButton.click = function cancelProjectButton_click (event)// @startlock
 	{// @endlock
@@ -177,6 +200,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
+		//fix for combobox render bug where button get shoved
+		// to the next line because input element grows by 2 px.
+		var inputWidth = $('#chooseManagerCombobox input').css('width');
+		$('#chooseManagerCombobox input').css('width', "-=2");	
+		
 		roleArray = [];
 		roleArray.push({title: 'Manager'});
 		roleArray.push({title: 'Director'});
@@ -218,6 +246,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("chooseManagerButton", "click", chooseManagerButton.click, "WAF");
+	WAF.addListener("chooseManagerOkButton", "click", chooseManagerOkButton.click, "WAF");
+	WAF.addListener("chooseManagerCancelButton", "click", chooseManagerCancelButton.click, "WAF");
 	WAF.addListener("cancelProjectButton", "click", cancelProjectButton.click, "WAF");
 	WAF.addListener("saveProjectButton", "click", saveProjectButton.click, "WAF");
 	WAF.addListener("newProjectButton", "click", newProjectButton.click, "WAF");

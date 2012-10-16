@@ -32,6 +32,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
+		$('#loginTextField, #passwordTextField').live('keyup', function (e) {
+	   		if ( e.keyCode == 13 ){
+	   			tivoUtil.signIn();
+	    	}
+		});
+		
 		// Add your code here
 		if (WAF.directory.currentUser() === null) {
 			$$("signOutContainer").hide();
