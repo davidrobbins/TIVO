@@ -1,6 +1,24 @@
 ﻿
 guidedModel =// @startlock
 {
+	Team_Project :
+	{
+		events :
+		{
+			onInit:function()
+			{// @endlock
+				this.review_date = new Date();
+			}// @startlock
+		},
+		methods :
+		{// @endlock
+			newReview:function()
+			{// @lock
+				// Create New Review
+				return new ds.Team_Project();
+			}// @startlock
+		}
+	},
 	Project :
 	{
 		methods :

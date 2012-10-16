@@ -33,11 +33,15 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	{// @endlock
 		waf.sources.team.manager.set(waf.sources.user1);
 		waf.sources.team.serverRefresh();
+		$('#chooseManagerDialog').css("top", -400);
+		$('#chooseManagerDialog').css("left", -400);
 		$$('chooseManagerDialog').closeDialog(); //ok button
 	};// @lock
 
 	chooseManagerCancelButton.click = function chooseManagerCancelButton_click (event)// @startlock
 	{// @endlock
+		$('#chooseManagerDialog').css("top", -400);
+		$('#chooseManagerDialog').css("left", -400);
 		$$('chooseManagerDialog').closeDialog(); //cancel button
 	};// @lock
 
