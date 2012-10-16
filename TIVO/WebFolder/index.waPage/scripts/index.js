@@ -135,42 +135,42 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	{// @endlock
 		//Quality Array Datasource.
 		qualityArray = [];
-		qualityArray.push({title: ''});
-		qualityArray.push({title: '1'});
-		qualityArray.push({title: '2'});
-		qualityArray.push({title: '3'});
-		qualityArray.push({title: '4'});
-		qualityArray.push({title: '5'});
+		qualityArray.push({title: 0});
+		qualityArray.push({title: 1});
+		qualityArray.push({title: 2});
+		qualityArray.push({title: 3});
+		qualityArray.push({title: 4});
+		qualityArray.push({title: 5});
 		WAF.sources.qualityArray.sync();
 		
 		//Delivery Array Datasource.
 		deliveryArray = [];
-		deliveryArray.push({title: ''});
-		deliveryArray.push({title: '1'});
-		deliveryArray.push({title: '2'});
-		deliveryArray.push({title: '3'});
-		deliveryArray.push({title: '4'});
-		deliveryArray.push({title: '5'});
+		deliveryArray.push({title: 0});
+		deliveryArray.push({title: 1});
+		deliveryArray.push({title: 2});
+		deliveryArray.push({title: 3});
+		deliveryArray.push({title: 4});
+		deliveryArray.push({title: 5});
 		WAF.sources.deliveryArray.sync();
 		
 		//Productivity Array Datasource.
 		productivityArray = [];
-		productivityArray.push({title: ''});
-		productivityArray.push({title: '1'});
-		productivityArray.push({title: '2'});
-		productivityArray.push({title: '3'});
-		productivityArray.push({title: '4'});
-		productivityArray.push({title: '5'});
+		productivityArray.push({title: 0});
+		productivityArray.push({title: 1});
+		productivityArray.push({title: 2});
+		productivityArray.push({title: 3});
+		productivityArray.push({title: 4});
+		productivityArray.push({title: 5});
 		WAF.sources.productivityArray.sync();
 		
 		//Staffing Array Datasource.
 		staffingArray = [];
-		staffingArray.push({title: ''});
-		staffingArray.push({title: '1'});
-		staffingArray.push({title: '2'});
-		staffingArray.push({title: '3'});
-		staffingArray.push({title: '4'});
-		staffingArray.push({title: '5'});
+		staffingArray.push({title: 0});
+		staffingArray.push({title: 1});
+		staffingArray.push({title: 2});
+		staffingArray.push({title: 3});
+		staffingArray.push({title: 4});
+		staffingArray.push({title: 5});
 		WAF.sources.staffingArray.sync();
 		
 		//fix for combobox render bug where button get shoved

@@ -95,7 +95,7 @@ guidedModel =// @startlock
 		{
 			onRestrictingQuery:function()
 			{// @endlock
-				//User
+				return ds.User.all();
 			},// @startlock
 			onInit:function()
 			{// @endlock
