@@ -191,7 +191,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$$("mainContainer").hide();
 			$("#splashContainer").css("top", "84px");
 			$("#splashContainer").css("left", "0px");
-			$$("splashContainer").show();	
+			$$("splashContainer").show();
+			
+			WAF.sources.team.setEntityCollection();	
+			WAF.sources.project.setEntityCollection();	
+			WAF.sources.user.setEntityCollection();	
+			WAF.sources.user1.setEntityCollection();		
 		}
 	};// @lock
 
