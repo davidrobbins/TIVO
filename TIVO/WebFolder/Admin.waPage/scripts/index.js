@@ -245,6 +245,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$("#splashContainer").css("left", "0px");
 			$("#splashContainer").show();
 			
+			waf.sources.user1.setEntityCollection();
+			waf.sources.user.setEntityCollection();
+			waf.sources.team.setEntityCollection();
+			waf.sources.project.setEntityCollection();
+			
 		} else {
 			$$("signOutContainer").show();
 			$$("signInContainer").hide();
@@ -252,6 +257,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$("#mainContainer").show();
 			$("#splashContainer").css("top", "-1px");
 			$("#splashContainer").hide();
+			
+			waf.sources.user1.query("role = :1", "Manager");
+			waf.sources.user.all();
+			waf.sources.team.all();
+			waf.sources.project.all();
 		}
 	};// @lock
 

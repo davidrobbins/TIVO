@@ -229,6 +229,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$("#splashContainer").css("left", "0px");
 			$("#splashContainer").show();
 			
+			WAF.sources.team.setEntityCollection();	
+			WAF.sources.project.setEntityCollection();
+			WAF.sources.team_Project.setEntityCollection();	
+			
 		} else {
 			$$("signOutContainer").show();
 			$$("signInContainer").hide();
