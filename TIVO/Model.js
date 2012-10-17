@@ -7,9 +7,22 @@ guidedModel =// @startlock
 		{// @endlock
 			jqPlotTest:function()
 			{// @lock
-				// Add your code here
 				
-				return [[[1, 2],[3,5],[5,10],[7,25],[9,33],[11,24]]];
+				var jqPlovtArray = [];
+				var result = [];
+				
+				// Add your code here
+				var count = 0;
+				this.forEach(function(review) {
+					count += 1;
+					result.push([count, review.total_score]);					
+				});
+				
+				jqPlovtArray.push(result);
+				return jqPlovtArray;
+				
+				//return [ [   [1, 2],[3,5],[5,10],[7,25],[9,33],[11,24]    ] ];
+				//return jqPlotArray;
 			}// @startlock
 		},
 		total_score :

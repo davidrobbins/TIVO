@@ -29,7 +29,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		waf.sources.team_Project.jqPlotTest({
 			onSuccess: function(event) {
 				//event.result
-				$.jqplot('chartContainer',  event.result);
+				$.jqplot('chartContainer',  event.result, {title: "Performance Review Total Score"});
 			}
 		});
 			
