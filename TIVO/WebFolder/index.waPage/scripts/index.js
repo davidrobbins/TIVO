@@ -73,6 +73,17 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		ds.Team_Project.newReview({
 			onSuccess: function(event) {
 				WAF.sources.team_Project.setCurrentEntity(event.result);
+				//reset comboboxes to zero
+				waf.sources.qualityArray.select(0);
+				waf.sources.deliveryArray.select(0);
+				waf.sources.productivityArray.select(0);
+				waf.sources.staffingArray.select(0);
+				
+				waf.sources.qualityArray.sync();
+				waf.sources.deliveryArray.sync();
+				waf.sources.productivityArray.sync();
+				waf.sources.staffingArray.sync();
+				
 				//$$('teamNameTextField').focus();
 				tivoUtil.setMessageValue("messageRichText", "Enter the Scores and click 'Save'.", false);
 			}
@@ -225,6 +236,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$("#mainContainer").show();
 			$("#splashContainer").css("top", "-1px");
 			$("#splashContainer").hide();
+			
+			$$("signInRichText").setValue("Signed in as : " + WAF.directory.currentUser().fullName);
+			waf.sources.team.all();
+			waf.sources.project.all();
+			waf.sources.team_Project.all();
 		}
 	};// @lock
 
