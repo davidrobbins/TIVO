@@ -5,6 +5,32 @@ guidedModel =// @startlock
 	{
 		collectionMethods :
 		{// @endlock
+			jqPlotMultiSeries:function()
+			{// @lock
+				// multiple series plot
+				var jqPlovtArray = [];
+				
+				var qualitySeries = [];
+				var deliverySeries = [];
+				var productivitySeries = [];
+				var staffingSeries = [];
+				
+				var count = 0;
+				this.forEach(function(review) {
+					count += 1;
+					qualitySeries.push([count, review.quality]);
+					deliverySeries.push([count, review.delivery]);		
+					productivitySeries.push([count, review.productivity]);		
+					staffingSeries.push([count, review.staffing]);							
+				});
+				
+				jqPlovtArray.push(qualitySeries);
+				jqPlovtArray.push(deliverySeries);
+				jqPlovtArray.push(productivitySeries);
+				jqPlovtArray.push(staffingSeries);
+				
+				return jqPlovtArray;
+			},// @lock
 			jqPlotTest:function()
 			{// @lock
 				
@@ -39,6 +65,7 @@ guidedModel =// @startlock
 			{// @endlock
 				//Team_Project
 				//return ds.Team_Project.all();
+				/**/
 				var myCurrentUser = currentUser(); // Get the current user
 				var sessionRef = currentSession(); // Get session.
 				var result = ds.Team_Project.createEntityCollection();
@@ -53,6 +80,7 @@ guidedModel =// @startlock
 				}
 				
 				return result;
+				
 			},// @startlock
 			onInit:function()
 			{// @endlock
@@ -63,7 +91,7 @@ guidedModel =// @startlock
 				var myUser = ds.User.find("ID = :1", myCurrentUser.ID);
 				this.reviewer = myUser;
 				this.review_date = new Date();
-				
+				this.note = "see you at Wakanday.";
 				sessionRef.unPromote(promoteToken); //put the session back to normal.
 			}// @startlock
 		},
@@ -110,6 +138,11 @@ guidedModel =// @startlock
 	{
 		methods :
 		{// @endlock
+			getLoginTime:function()
+			{// @lock
+				// For Lesser Know Features Demo
+				return sessionStorage.time;
+			},// @lock
 			newUser:function()
 			{// @lock
 				// Create New User

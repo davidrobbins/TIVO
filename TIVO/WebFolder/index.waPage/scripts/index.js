@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var menuItem6 = {};	// @menuItem
 	var menuItem5 = {};	// @menuItem
 	var cancelPRTButton = {};	// @button
 	var savePRTButton = {};	// @button
@@ -18,6 +19,32 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	menuItem6.click = function menuItem6_click (event)// @startlock
+	{// @endlock
+		//Another Chart
+		/*
+		$.jqplot('anotherChartContainer',  [
+					[[1, 2],[3,5.12],[5,13.1],[7,33.6],[9,85.9],[11,219.9]], 
+					[[1, 4],[3,22],[5,68],[7,32],[9,78],[11,22]],
+				 	[[1, 78],[3,43],[5,54],[7,37],[9,12],[11,44]]
+			],
+			{legend:{show: true, labels: ['one', 'two', 'three']}, series:[{color:'red'}]}
+		);
+		*/
+		
+		/**/
+		waf.sources.team_Project.jqPlotMultiSeries({
+			onSuccess: function(event) {
+				//event.result
+				$.jqplot('anotherChartContainer',  
+					event.result, {title: "Review Criteria Chart"}
+					//,{legend:{show: true, labels: ['quality', 'delivery', 'productivity', 'staffing']}}
+				);
+			}
+		});
+		
+	};// @lock
 
 	menuItem5.click = function menuItem5_click (event)// @startlock
 	{// @endlock
@@ -249,6 +276,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("menuItem6", "click", menuItem6.click, "WAF");
 	WAF.addListener("menuItem5", "click", menuItem5.click, "WAF");
 	WAF.addListener("cancelPRTButton", "click", cancelPRTButton.click, "WAF");
 	WAF.addListener("savePRTButton", "click", savePRTButton.click, "WAF");
