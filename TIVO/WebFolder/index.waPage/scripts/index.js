@@ -38,7 +38,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			onSuccess: function(event) {
 				//event.result
 				$.jqplot('anotherChartContainer',  
-					event.result, {title: "Review Criteria Chart"}
+					event.result, {title: "Review Criteria Chart", legend:{show: true, labels: ['quality', 'delivery', 'productivity', 'staffing']}}
 					//,{legend:{show: true, labels: ['quality', 'delivery', 'productivity', 'staffing']}}
 				);
 			}
