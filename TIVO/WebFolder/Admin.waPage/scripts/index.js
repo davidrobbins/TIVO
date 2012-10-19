@@ -24,6 +24,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	chooseManagerButton.click = function chooseManagerButton_click (event)// @startlock
 	{// @endlock
 		//Choose Manager Open Dialog Button
+		waf.sources.user1.query("role = :1", "Manager"); // Reload users.
 		$('#chooseManagerDialog').css("top", 200);
 		$('#chooseManagerDialog').css("left", 350);
 		WAF.widgets['chooseManagerDialog'].displayDialog();

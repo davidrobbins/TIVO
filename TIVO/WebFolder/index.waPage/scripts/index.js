@@ -98,6 +98,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	{// @endlock
 		//New Project Team Review
 		ds.Team_Project.newReview({
+				autoExpand: "reviewer",
 			onSuccess: function(event) {
 				WAF.sources.team_Project.setCurrentEntity(event.result);
 				//reset comboboxes to zero

@@ -91,7 +91,6 @@ guidedModel =// @startlock
 				var myUser = ds.User.find("ID = :1", myCurrentUser.ID);
 				this.reviewer = myUser;
 				this.review_date = new Date();
-				this.note = "see you at Wakanday.";
 				sessionRef.unPromote(promoteToken); //put the session back to normal.
 			}// @startlock
 		},
