@@ -127,6 +127,26 @@ guidedModel =// @startlock
 		},
 		methods :
 		{// @endlock
+			getTeamNames:function()
+			{// @lock
+				var sessionRef = currentSession(); // Get session.
+				var promoteToken = sessionRef.promoteWith("Manager"); //temporarily make this session Admin level.
+				// create and array of team names for team filter.
+				//var teamNames = ds.Team.toArray("name");
+				var allTeams = ds.Team.all();
+				
+				 var teamNamesArray = [];
+				 
+				allTeams.forEach(function(theTeam) {
+					tempObj = {};
+					tempObj.title = theTeam.name;
+					teamNamesArray.push(tempObj);
+				});
+				
+				sessionRef.unPromote(promoteToken); //put the session back to normal.
+				teamNamesArray.unshift({title: "All"});
+				return teamNamesArray;
+			},// @lock
 			newTeam:function()
 			{// @lock
 				// Create New Team
